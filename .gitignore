@@ -1,0 +1,10 @@
+# Max
+.DS_Store
+
+# data
+*.txt
+*.wav
+
+# other
+tags
+.python-version
