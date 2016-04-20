@@ -67,7 +67,8 @@ data_idx = last_idx() + 1
 
 for idx, script_file in enumerate(script_files, start=data_idx):
     str_idx = str(idx).zfill(4)
-    voice_id = '%s_%s' % (today_str(), str_idx)
+    basename = script_file.split('/')[-1].rstrip('.txt')
+    voice_id = '%s_%s' % (today_str(), basename)
     script = open(script_file).read().rstrip()
 
     key = None
