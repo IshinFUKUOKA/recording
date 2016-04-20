@@ -9,7 +9,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 16000
 CHUNK = 2**11
-DEVICE_INDEX = 0
+DEVICE_INDEX = 3
 
 def today_str():
     return dt.now().strftime('%Y-%m-%d')
@@ -103,9 +103,10 @@ for idx, script_file in enumerate(script_files, start=data_idx):
         WAVE_OUTPUT_FILENAME = '%s.wav' % voice_id
         write_wav(WAVE_OUTPUT_FILENAME, frames)
 
-        print u'Enterキーを押してください．音声が再生されます．'
-        raw_input()
-        play_wav(WAVE_OUTPUT_FILENAME)
+        print u'Enterキーを押してください．再生する場合は[p]を押してください．'
+        cmd = raw_input()
+        if (cmd == 'p'):
+            play_wav(WAVE_OUTPUT_FILENAME)
         # check
         print(u'今の音声で登録しますか？[y/n]')
         key = raw_input()
