@@ -15,7 +15,7 @@ def today_str():
     return dt.now().strftime('%Y-%m-%d')
 
 def last_idx():
-    wav_files = sb.check_output('ls wav/', shell=True).split('\n')[-2]
+    wav_files = sb.check_output('ls wav', shell=True).split('\n')[:-1]
     last_file = [wav_file for wav_file in wav_files if today_str() in wav_files]
     if len(last_file) == 0:
         last_idx= 0
