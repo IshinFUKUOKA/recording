@@ -14,8 +14,9 @@ You need pyaudio, python2.7.
 
 # Usage
 
- - put text files to read.
+ - put text files into `txt/`.
  - check device index
    - exec `python pacheck.py`  and check index of device you use
- - run! `python record.py`
+   - overwrite `record.py#12`'s **DEVICE_INDEX**
+ - run `python record.py`
  - output sound to `wav/` dir and text files are output to `script/`
